@@ -1,0 +1,86 @@
+<meta name="google-site-verification" content="fYgfnsVcglFoABMU9MAFitHjhsOsH-UgR3hCDUfGxvA" /><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - Abhinav Gholap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #codePage, #namePage, #welcomePage {
+      display: none;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="introPage">
+    <h1>Made by <span style="color:#00FFAA;">Abhinav Gholap</span></h1>
+    <h2>Narayana E-Techno School</h2>
+    <p>Enter the Intercode to continue</p>
+    <input type="text" id="codeInput" placeholder="Enter Intercode">
+    <br>
+    <button onclick="checkCode()">Submit</button>
+  </div>
+
+  <div id="namePage">
+    <h2>Who are you?</h2>
+    <button onclick="chooseName('Fauzan')">Fauzan</button>
+    <button onclick="chooseName('Rajveer')">Rajveer</button>
+    <button onclick="chooseName('Om')">Om</button>
+  </div>
+
+  <div id="welcomePage">
+    <h2 id="welcomeText"></h2>
+    <p>We have to make wallpaper website. Let's go!</p>
+  </div>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById("codeInput").value;
+      if (code === "6015142") {
+        document.getElementById("introPage").style.display = "none";
+        document.getElementById("namePage").style.display = "block";
+      } else {
+        alert("Wrong code! Try again.");
+      }
+    }
+
+    function chooseName(name) {
+      document.getElementById("namePage").style.display = "none";
+      document.getElementById("welcomePage").style.display = "block";
+      let message = "";
+      if (name === "Fauzan") message = "Welcome Fauzan Shaikh!";
+      else if (name === "Rajveer") message = "Welcome Rajveer Colangade!";
+      else if (name === "Om") message = "Welcome Om Hange!";
+      document.getElementById("welcomeText").innerText = message;
+    }
+  </script>
+
+</body>
+</html>
